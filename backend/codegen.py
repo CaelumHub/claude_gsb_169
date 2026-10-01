@@ -389,10 +389,10 @@ class CodeGenerator:
                 changed = True
             ins = nxt
 
-        # 最终回填偏移与行号映射
+        # 最终回填偏移与行号映射（偏移为 0-based，与 VM 的 ip 及指令下标一致）
         fc.instructions = ins
         fc.line_to_offset = {}
         for idx, i in enumerate(ins):
-            i.offset = idx + 1
+            i.offset = idx
             if i.line not in fc.line_to_offset:
                 fc.line_to_offset[i.line] = idx

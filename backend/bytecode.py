@@ -127,7 +127,7 @@ class ProgramCode:
         if self.main is not None:
             all_fcs.append(self.main)
         all_fcs.extend(self.functions.values())
-        total = len(all_fcs)
+        total = sum(len(f.instructions) for f in all_fcs)
         fns = [f.to_dict() for f in all_fcs]
         return {
             "global_names": self.global_names,
