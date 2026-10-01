@@ -43,7 +43,7 @@ class CompileResult:
             "token_count": len(self.tokens) + 1,
             "has_ast": self.ast is not None,
             "has_symbols": self.symbol_table is not None,
-            "has_bytecode": self.ast is not None,
+            "has_bytecode": self.bytecode is not None,
         }
         if include_source:
             d["source"] = self.source

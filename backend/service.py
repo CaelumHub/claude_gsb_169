@@ -246,7 +246,6 @@ class Service:
             view["symbols"] = result.symbol_table.to_dict()
         if detail == "all" and result.bytecode is not None:
             view["bytecode"] = result.bytecode.to_dict()
-            view["bytecode"]["functions"].reverse()
         return view
 
     # ==================================================================
